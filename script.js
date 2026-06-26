@@ -1,0 +1,143 @@
+/* =================================================================
+   BrainSpark — script.js (vanilla)
+   ================================================================= */
+(function () {
+  "use strict";
+
+  /* ---------- Mobile navigation ---------- */
+  var toggle = document.getElementById("navToggle");
+  var nav = document.getElementById("primaryNav");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("is-open");
+      toggle.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+
+    /* close after choosing a link */
+    nav.querySelectorAll(".nav__link").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("is-open");
+        toggle.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  /* ---------- Inquiry-type chips (radio behaviour) ---------- */
+  var chips = document.querySelectorAll(".chips .chip");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) {
+        c.classList.remove("is-active");
+        c.setAttribute("aria-checked", "false");
+      });
+      chip.classList.add("is-active");
+      chip.setAttribute("aria-checked", "true");
+    });
+  });
+
+  /* ---------- Contact form ---------- */
+  var form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector(".btn--send");
+      if (!btn || btn.dataset.busy) return;
+
+      var original = btn.innerHTML;
+      btn.dataset.busy = "1";
+      btn.innerHTML = "Sent ✓";
+      btn.style.background = "#1F8A5B";
+
+      setTimeout(function () {
+        form.reset();
+        chips.forEach(function (c, i) {
+          c.classList.toggle("is-active", i === 0);
+          c.setAttribute("aria-checked", i === 0 ? "true" : "false");
+        });
+        btn.innerHTML = original;
+        btn.style.background = "";
+        delete btn.dataset.busy;
+      }, 2200);
+    });
+  }
+
+  /* ---------- Reveal-on-scroll (subtle) ---------- */
+  if ("IntersectionObserver" in window) {
+    var targets = document.querySelectorAll(
+      ".model-card, .app-card, .brand-card, .result-card, .logo-tile"
+    );
+    targets.forEach(function (el) {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(16px)";
+      el.style.transition = "opacity .5s ease, transform .5s ease";
+    });
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var delay = (el.dataset.i || 0) * 60;
+            setTimeout(function () {
+              el.style.opacity = "1";
+              el.style.transform = "none";
+            }, delay);
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    /* stagger siblings within each group */
+    document
+      .querySelectorAll(".model-grid, .apps__grid, .brand-grid, .results-grid, .logo-grid")
+      .forEach(function (group) {
+        Array.prototype.slice.call(group.children).forEach(function (child, i) {
+          child.dataset.i = i;
+        });
+      });
+
+    targets.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- Owned & Operated slider dots (mobile) ---------- */
+  var slider = document.querySelector(".apps__grid");
+  var dotsWrap = document.getElementById("appsDots");
+  if (slider && dotsWrap) {
+    var cards = Array.prototype.slice.call(slider.querySelectorAll(".app-card"));
+    var stepSize = function () {
+      return cards.length > 1 ? (cards[1].offsetLeft - cards[0].offsetLeft) : slider.clientWidth;
+    };
+
+    cards.forEach(function (card, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "apps__dot" + (i === 0 ? " is-active" : "");
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-label", "Go to app " + (i + 1));
+      b.addEventListener("click", function () {
+        slider.scrollTo({ left: i * stepSize(), behavior: "smooth" });
+      });
+      dotsWrap.appendChild(b);
+    });
+
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+    var raf;
+    slider.addEventListener("scroll", function () {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        var idx = Math.round(slider.scrollLeft / stepSize());
+        idx = Math.max(0, Math.min(cards.length - 1, idx));
+        dots.forEach(function (d, j) {
+          d.classList.toggle("is-active", j === idx);
+          d.setAttribute("aria-selected", j === idx ? "true" : "false");
+        });
+      });
+    }, { passive: true });
+  }
+})();
