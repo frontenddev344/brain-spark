@@ -169,7 +169,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============================== HEADER ============================== */
 .site-header {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 50;
   background: rgba(254,250,239,0.8);
