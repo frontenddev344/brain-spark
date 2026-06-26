@@ -761,7 +761,7 @@ span.check svg {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 98px;
+  height: 70px;
 }
 .site-footer__logo { height: 44px; width: auto; }
 .site-footer__copy { font-size: 12px; margin: 0; }
