@@ -179,7 +179,7 @@
   .ow-stat { display: flex; align-items: center; gap: 12px; text-align: left; }
   .ow-stat + .ow-stat::before { display: none; }
   .ow-stat__icon { margin-bottom: 0; flex-shrink: 0; }
-  .ow-notes { flex-direction: column; }
+  /*.ow-notes { flex-direction: column; }*/
 
   .subs-banner { grid-template-columns: 1fr; gap: 22px; }
   .subs + .subs::before { display: none; }
@@ -201,6 +201,9 @@
 }
 .site-footer .site-footer__inner {
     flex-direction: column-reverse;
+}
+.ow-note {
+    flex: 1 1 140px;
 }
 }
 
