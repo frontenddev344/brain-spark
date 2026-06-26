@@ -231,6 +231,14 @@
 .dsp__list li {
     width: 100%;
 }
+.ow-note {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+}
+.ow-note p {
+    max-width: 100%;
+}
 }
 
 /* =================== <= 375px =================== */
