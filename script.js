@@ -116,6 +116,36 @@
     });
   }
 
+  /* ---------- Stat counters ---------- */
+  var statEls = document.querySelectorAll(".hero__stats [data-count]");
+  if (statEls.length) {
+    var countersStarted = false;
+    function animateCounters() {
+      if (countersStarted) return;
+      countersStarted = true;
+      statEls.forEach(function (el) {
+        var target = parseInt(el.getAttribute("data-count"), 10);
+        var suffix = el.getAttribute("data-suffix") || "";
+        var duration = 1600;
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) {
+        animateCounters();
+      }
+    }, { threshold: 0.3 });
+    statEls.forEach(function (el) { observer.observe(el); });
+  }
+
   /* ---------- Hero typing effect ---------- */
   var typedEl = document.getElementById("typedWord");
   if (typedEl) {

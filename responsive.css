@@ -184,7 +184,7 @@
 
   .subs-banner { grid-template-columns: 1fr; gap: 22px; }
   .subs + .subs::before { display: none; }
-  .subs { padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.16); }
+  .subs { padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.16);}
   .subs:first-child { padding-top: 0; border-top: none; }
 
   .logo-grid { grid-template-columns: 1fr 1fr; }
