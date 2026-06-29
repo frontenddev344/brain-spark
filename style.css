@@ -227,22 +227,29 @@ button { font-family: inherit; cursor: pointer; }
   align-items: center;
 }
 .hero__title {
-    font-family: var(--font-display);
+    font-family: "Outfit", system-ui, sans-serif;
     font-weight: 700;
     font-size: 72px;
     line-height: 0.95;
-    letter-spacing: -0.7px;
+    letter-spacing: -0.3px;
     margin: 22px 0 22px;
     color: var(--cyan);
     -webkit-text-stroke: 2px var(--purple-stroke);
-    /* text-shadow: 3px 3px 0 var(--purple-stroke); */
     paint-order: stroke fill;
-    text-shadow: 3px 3px 0 #fc328c, 6px 6px 0 #5a138c;
+    text-shadow: 3px 3px 0 #fc328c;
 }
-.hero__title span {
-    text-shadow: 3px 3px 0 #520F7D, 5px 6px 0 #ff2d92, 8px 8px 0 #5a138c, 0px 0px 0px rgba(255, 45, 146, .25);
-    color: #ff2d92;
-    letter-spacing: 0;
+.hero__cursor {
+    display: inline-block;
+    color: var(--pink);
+    font-weight: 300;
+    margin-left: 3px;
+    animation: cursor-blink 0.7s step-end infinite;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+}
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 .hero__lede {
   font-size: 18px;

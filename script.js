@@ -105,6 +105,25 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- Hero typing effect ---------- */
+  var typedEl = document.getElementById("typedWord");
+  if (typedEl) {
+    var words = ["Data.", "Loyalty.", "Results."];
+    var wIdx = 0, cIdx = 0, deleting = false;
+    function runTyper() {
+      var word = words[wIdx];
+      typedEl.textContent = deleting
+        ? word.substring(0, cIdx - 1)
+        : word.substring(0, cIdx + 1);
+      deleting ? cIdx-- : cIdx++;
+      var delay = deleting ? 55 : 95;
+      if (!deleting && cIdx === word.length) { delay = 1600; deleting = true; }
+      else if (deleting && cIdx === 0) { deleting = false; wIdx = (wIdx + 1) % words.length; delay = 350; }
+      setTimeout(runTyper, delay);
+    }
+    setTimeout(runTyper, 600);
+  }
+
   /* ---------- Owned & Operated slider dots (mobile) ---------- */
   var slider = document.querySelector(".apps__grid");
   var dotsWrap = document.getElementById("appsDots");
