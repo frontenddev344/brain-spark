@@ -105,6 +105,17 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- Back to top ---------- */
+  var backToTopBtn = document.getElementById("backToTop");
+  if (backToTopBtn) {
+    window.addEventListener("scroll", function () {
+      backToTopBtn.classList.toggle("is-visible", window.scrollY > 400);
+    }, { passive: true });
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   /* ---------- Hero typing effect ---------- */
   var typedEl = document.getElementById("typedWord");
   if (typedEl) {
@@ -146,6 +157,22 @@
     });
 
     var dots = Array.prototype.slice.call(dotsWrap.children);
+
+    /* touch swipe */
+    var touchStartX = 0;
+    slider.addEventListener("touchstart", function (e) {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    slider.addEventListener("touchend", function (e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) < 50) return;
+      var idx = Math.round(slider.scrollLeft / stepSize());
+      idx = diff > 0
+        ? Math.min(cards.length - 1, idx + 1)
+        : Math.max(0, idx - 1);
+      slider.scrollTo({ left: idx * stepSize(), behavior: "smooth" });
+    }, { passive: true });
+
     var raf;
     slider.addEventListener("scroll", function () {
       if (raf) cancelAnimationFrame(raf);
