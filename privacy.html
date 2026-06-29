@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — BrainSpark</title>
+  <meta name="description" content="BrainSpark Privacy Policy — Mobile Pushers LLC" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@500;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <style>
+    /* ---- Privacy / legal page layout (same as terms) ---- */
+    .terms-hero {
+      background: var(--purple-section);
+      border-bottom: 2px solid var(--ink);
+      padding: 56px 0 48px;
+      color: #fff;
+    }
+    .terms-hero__label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 14px;
+    }
+    .terms-hero__title {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.05;
+      margin: 0 0 12px;
+      color: #fff;
+    }
+    .terms-hero__meta { font-size: 14px; color: rgba(255,255,255,0.55); }
+
+    .terms-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 56px 0 80px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 24px;
+      background: #fff;
+      border-radius: var(--r-card);
+      box-shadow: inset 0 0 0 2px var(--ink), var(--shadow-hard-sm);
+      padding: 24px 20px;
+    }
+    .toc__title {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+    .toc__list { display: flex; flex-direction: column; gap: 2px; }
+    .toc__list a {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted-2);
+      padding: 5px 8px;
+      border-radius: 8px;
+      transition: background .15s ease, color .15s ease;
+      line-height: 1.4;
+    }
+    .toc__list a:hover { background: var(--cyan-soft); color: var(--ink); }
+
+    .terms-body { min-width: 0; }
+    .terms-section { margin-bottom: 44px; }
+    .terms-section:last-child { margin-bottom: 0; }
+
+    .terms-section h2 {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--ink);
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+      scroll-margin-top: 30px;
+    }
+    .terms-section h3 {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink);
+      margin: 20px 0 8px;
+    }
+    .terms-section p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+    .terms-section p:last-child { margin-bottom: 0; }
+    .terms-section ul, .terms-section ol {
+      list-style: disc;
+      padding-left: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+    .terms-section ol { list-style: decimal; }
+    .terms-section li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .terms-section a { color: var(--purple-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .terms-section a:hover { color: var(--pink); }
+
+    .terms-caps {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+      background: #f5f3fb;
+      border-left: 3px solid var(--purple-stroke);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 0 0 14px;
+    }
+
+    .terms-intro {
+      background: #fff;
+      border-radius: var(--r-card);
+      box-shadow: inset 0 0 0 2px var(--ink), var(--shadow-hard-sm);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .terms-intro p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+    .terms-intro p:last-child { margin-bottom: 0; }
+    .terms-intro strong { color: var(--ink); }
+
+    /* Summary key-points card */
+    .summary-card {
+      background: var(--cyan-soft);
+      border-radius: var(--r-card);
+      box-shadow: inset 0 0 0 2px var(--ink), var(--shadow-hard-sm);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-card__title {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin: 0 0 18px;
+    }
+    .summary-card__list { display: flex; flex-direction: column; gap: 14px; }
+    .summary-item {}
+    .summary-item__q {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+    .summary-item__a {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Data categories table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 14px 0 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 2px var(--ink);
+    }
+    .data-table thead { background: var(--ink); color: #fff; }
+    .data-table th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: #fafafa; }
+    .data-table .pill-yes {
+      display: inline-block;
+      background: #d1fae5;
+      color: #065f46;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+    .data-table .pill-no {
+      display: inline-block;
+      background: var(--line);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+
+    .terms-contact-card {
+      background: var(--purple-section);
+      border-radius: var(--r-card);
+      box-shadow: inset 0 0 0 2px var(--ink), var(--shadow-hard-sm);
+      padding: 28px 32px;
+      color: #fff;
+    }
+    .terms-contact-card h2 {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--cyan);
+      margin: 0 0 16px;
+      border-bottom: 2px solid rgba(255,255,255,0.15);
+      padding-bottom: 10px;
+    }
+    .terms-contact-card p { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.75); margin: 0 0 6px; }
+    .terms-contact-card a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .terms-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { position: static; }
+      .terms-hero__title { font-size: 34px; }
+      .data-table { font-size: 12px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+    @media (max-width: 480px) {
+      .terms-hero__title { font-size: 28px; }
+      .terms-intro, .summary-card, .terms-contact-card { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="BrainSpark home">
+        <img src="images/logo.png" alt="BrainSpark" class="brand__logo" />
+      </a>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="index.html#business" class="nav__link">How it works</a>
+        <a href="index.html#gameplan" class="nav__link">Game Plan</a>
+        <a href="index.html#mobile-apps" class="nav__link">Mobile Apps</a>
+        <a href="index.html#spark-dsp" class="nav__link">Spark DSP</a>
+      </nav>
+      <div class="header__actions">
+        <a href="index.html#contact" class="btn btn--pink btn--sm header__cta">Get in Touch <span aria-hidden="true">→</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================= HERO ========================= -->
+    <section class="terms-hero">
+      <div class="container">
+        <span class="terms-hero__label">Legal</span>
+        <h1 class="terms-hero__title">Privacy Policy</h1>
+        <p class="terms-hero__meta">Last updated February 15, 2024</p>
+      </div>
+    </section>
+
+    <!-- ========================= CONTENT ========================= -->
+    <div class="container">
+      <div class="terms-layout">
+
+        <!-- Sidebar TOC -->
+        <aside class="toc" aria-label="Table of contents">
+          <p class="toc__title">Contents</p>
+          <nav class="toc__list">
+            <a href="#intro">Overview</a>
+            <a href="#summary">Summary of Key Points</a>
+            <a href="#s1">1. What We Collect</a>
+            <a href="#s2">2. How We Process</a>
+            <a href="#s3">3. Who We Share With</a>
+            <a href="#s4">4. Cookies</a>
+            <a href="#s5">5. Retention</a>
+            <a href="#s6">6. Security</a>
+            <a href="#s7">7. Minors</a>
+            <a href="#s8">8. Your Privacy Rights</a>
+            <a href="#s9">9. Do-Not-Track</a>
+            <a href="#s10">10. US Residents</a>
+            <a href="#s11">11. Updates to Notice</a>
+            <a href="#s12">12. Contact Us</a>
+            <a href="#s13">13. Review / Delete Data</a>
+          </nav>
+        </aside>
+
+        <!-- Body -->
+        <div class="terms-body">
+
+          <!-- Intro -->
+          <div class="terms-intro" id="intro">
+            <p>This privacy notice for <strong>Mobile Pushers LLC</strong> ("we," "us," or "our") describes how and why we might collect, store, use, and/or share ("process") your information when you use our services ("Services"), such as when you:</p>
+            <ul style="list-style:disc;padding-left:22px;display:flex;flex-direction:column;gap:8px;margin:0 0 14px;">
+              <li style="font-size:14px;line-height:1.7;color:var(--muted);">Visit our website at <a href="http://mobilepushers.com" target="_blank" rel="noopener">http://mobilepushers.com</a>, or any website of ours that links to this privacy notice</li>
+              <li style="font-size:14px;line-height:1.7;color:var(--muted);">Engage with us in other related ways, including any sales, marketing, or events</li>
+            </ul>
+            <p><strong>Questions or concerns?</strong> Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:support@mobilepushers.com">support@mobilepushers.com</a>.</p>
+          </div>
+
+          <!-- Summary -->
+          <div class="summary-card" id="summary">
+            <p class="summary-card__title">Summary of Key Points</p>
+            <div class="summary-card__list">
+              <div class="summary-item">
+                <p class="summary-item__q">What personal information do we process?</p>
+                <p class="summary-item__a">When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use.</p>
+              </div>
+              <div class="summary-item">
+                <p class="summary-item__q">Do we process any sensitive personal information?</p>
+                <p class="summary-item__a">We do not process sensitive personal information.</p>
+              </div>
+              <div class="summary-item">
+                <p class="summary-item__q">Do we receive any information from third parties?</p>
+                <p class="summary-item__a">We do not receive any information from third parties.</p>
+              </div>
+              <div class="summary-item">
+                <p class="summary-item__q">How do we process your information?</p>
+                <p class="summary-item__a">We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.</p>
+              </div>
+              <div class="summary-item">
+                <p class="summary-item__q">How do we keep your information safe?</p>
+                <p class="summary-item__a">We have organizational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet can be guaranteed to be 100% secure.</p>
+              </div>
+              <div class="summary-item">
+                <p class="summary-item__q">What are your rights?</p>
+                <p class="summary-item__a">Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information.</p>
+              </div>
+              <div class="summary-item">
+                <p class="summary-item__q">How do you exercise your rights?</p>
+                <p class="summary-item__a">The easiest way to exercise your rights is by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1 -->
+          <div class="terms-section" id="s1">
+            <h2>1. What Information Do We Collect?</h2>
+            <h3>Personal information you disclose to us</h3>
+            <p><em>In Short: We collect personal information that you provide to us.</em></p>
+            <p>We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</p>
+            <p>The personal information we collect may include the following:</p>
+            <ul>
+              <li>Names</li>
+              <li>Phone numbers</li>
+              <li>Email addresses</li>
+              <li>Mailing addresses</li>
+              <li>Job titles</li>
+              <li>Contact preferences</li>
+            </ul>
+            <p><strong>Sensitive Information.</strong> We do not process sensitive information.</p>
+            <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
+
+            <h3>Information automatically collected</h3>
+            <p><em>In Short: Some information — such as your IP address and/or browser and device characteristics — is collected automatically when you visit our Services.</em></p>
+            <p>We automatically collect certain information when you visit, use, or navigate the Services. This information does not reveal your specific identity but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, and information about how and when you use our Services.</p>
+            <p>Like many businesses, we also collect information through cookies and similar technologies. The information we collect includes:</p>
+            <ul>
+              <li><strong>Log and Usage Data.</strong> Service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our Services — including your IP address, device information, browser type, and activity in the Services (date/time stamps, pages viewed, searches, features used).</li>
+              <li><strong>Device Data.</strong> Information about your computer, phone, tablet, or other device — such as IP address (or proxy server), device and application identification numbers, location, browser type, hardware model, Internet service provider and/or mobile carrier, operating system, and system configuration information.</li>
+              <li><strong>Location Data.</strong> Information about your device's location, which can be either precise or imprecise. You can opt out by refusing access or by disabling your Location setting on your device. Note that opting out may affect certain aspects of the Services.</li>
+            </ul>
+          </div>
+
+          <!-- 2 -->
+          <div class="terms-section" id="s2">
+            <h2>2. How Do We Process Your Information?</h2>
+            <p><em>In Short: We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.</em></p>
+            <p>We process your personal information for a variety of reasons, depending on how you interact with our Services, always ensuring we have a valid legal basis to do so.</p>
+          </div>
+
+          <!-- 3 -->
+          <div class="terms-section" id="s3">
+            <h2>3. When and With Whom Do We Share Your Personal Information?</h2>
+            <p><em>In Short: We may share information in specific situations described in this section and/or with the following third parties.</em></p>
+            <p>We may need to share your personal information in the following situations:</p>
+            <ul>
+              <li><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+              <li><strong>Google Analytics.</strong> We may share your information with Google Analytics to track and analyze the use of the Services. We may use Google Analytics Advertising Features including Remarketing with Google Analytics. To opt out of being tracked by Google Analytics, visit <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">https://tools.google.com/dlpage/gaoptout</a>. You can also opt out through <a href="http://optout.networkadvertising.org/" target="_blank" rel="noopener">http://optout.networkadvertising.org/</a>.</li>
+            </ul>
+          </div>
+
+          <!-- 4 -->
+          <div class="terms-section" id="s4">
+            <h2>4. Do We Use Cookies and Other Tracking Technologies?</h2>
+            <p><em>In Short: We may use cookies and other tracking technologies to collect and store your information.</em></p>
+            <p>We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice.</p>
+          </div>
+
+          <!-- 5 -->
+          <div class="terms-section" id="s5">
+            <h2>5. How Long Do We Keep Your Information?</h2>
+            <p><em>In Short: We keep your information for as long as necessary to fulfill the purposes outlined in this privacy notice unless otherwise required by law.</em></p>
+            <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements).</p>
+            <p>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or securely store your personal information and isolate it from any further processing until deletion is possible.</p>
+          </div>
+
+          <!-- 6 -->
+          <div class="terms-section" id="s6">
+            <h2>6. How Do We Keep Your Information Safe?</h2>
+            <p><em>In Short: We aim to protect your personal information through a system of organizational and technical security measures.</em></p>
+            <p>We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information.</p>
+            <p>Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.</p>
+          </div>
+
+          <!-- 7 -->
+          <div class="terms-section" id="s7">
+            <h2>7. Do We Collect Information From Minors?</h2>
+            <p><em>In Short: We do not knowingly collect data from or market to children under 18 years of age.</em></p>
+            <p>We do not knowingly solicit data from or market to children under 18 years of age. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at <a href="mailto:support@mobilepushers.com">support@mobilepushers.com</a>.</p>
+          </div>
+
+          <!-- 8 -->
+          <div class="terms-section" id="s8">
+            <h2>8. What Are Your Privacy Rights?</h2>
+            <p><em>In Short: You may review, change, or terminate your account at any time.</em></p>
+            <h3>Withdrawing your consent</h3>
+            <p>If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time by contacting us using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below. Please note that this will not affect the lawfulness of the processing before its withdrawal.</p>
+            <h3>Opting out of marketing communications</h3>
+            <p>You can unsubscribe from our marketing and promotional communications at any time by clicking on the unsubscribe link in the emails that we send, or by contacting us using the details provided below. You will then be removed from the marketing lists. However, we may still communicate with you for service-related messages that are necessary for the administration and use of your account.</p>
+            <h3>Cookies and similar technologies</h3>
+            <p>Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove or reject cookies, this could affect certain features or services of our Services.</p>
+            <p>If you have questions or comments about your privacy rights, you may email us at <a href="mailto:support@mobilepushers.com">support@mobilepushers.com</a>.</p>
+          </div>
+
+          <!-- 9 -->
+          <div class="terms-section" id="s9">
+            <h2>9. Controls for Do-Not-Track Features</h2>
+            <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.</p>
+          </div>
+
+          <!-- 10 -->
+          <div class="terms-section" id="s10">
+            <h2>10. Do United States Residents Have Specific Privacy Rights?</h2>
+            <p><em>In Short: If you are a US resident, you are granted specific rights regarding access to your personal information.</em></p>
+            <h3>Categories of personal information collected</h3>
+            <p>We have collected the following categories of personal information in the past twelve (12) months:</p>
+
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Examples</th>
+                    <th>Collected</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>A. Identifiers</strong></td>
+                    <td>Contact details, such as real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, IP address, email address, and account name</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>B. Protected classification</strong></td>
+                    <td>Gender and date of birth</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>C. Commercial information</strong></td>
+                    <td>Transaction information, purchase history, financial details, and payment information</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>D. Biometric information</strong></td>
+                    <td>Fingerprints and voiceprints</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>E. Internet or network activity</strong></td>
+                    <td>Browsing history, search history, online behavior, interest data, and interactions with our and other websites, applications, systems, and advertisements</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>F. Geolocation data</strong></td>
+                    <td>Device location</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>G. Audio, electronic, visual</strong></td>
+                    <td>Images and audio, video or call recordings created in connection with our business activities</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>H. Professional information</strong></td>
+                    <td>Business contact details in order to provide you our Services at a business level or job title, work history, and professional qualifications</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>I. Education information</strong></td>
+                    <td>Student records and directory information</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>J. Inferences</strong></td>
+                    <td>Inferences drawn from any of the collected personal information listed above to create a profile or summary about an individual's preferences and characteristics</td>
+                    <td><span class="pill-yes">YES</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>K. Sensitive personal information</strong></td>
+                    <td>—</td>
+                    <td><span class="pill-no">NO</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>We will use and retain the collected personal information as needed to provide the Services or for:</p>
+            <ul>
+              <li>Category E — As long as the user has an account with us</li>
+              <li>Category F — As long as the user has an account with us</li>
+              <li>Category J — As long as the user has an account with us</li>
+            </ul>
+            <p>We may also collect other personal information outside of these categories through instances where you interact with us in person, online, or by phone or mail in the context of: receiving help through our customer support channels; participation in customer surveys or contests; and facilitation in the delivery of our Services and to respond to your inquiries.</p>
+
+            <h3>How do we use and share your personal information?</h3>
+            <p>Learn about how we use your personal information in the section <a href="#s2">"HOW DO WE PROCESS YOUR INFORMATION?"</a></p>
+            <p>We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be "selling" of your personal information.</p>
+            <p>We have not disclosed, sold, or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. We will not sell or share personal information in the future belonging to website visitors, users, and other consumers.</p>
+          </div>
+
+          <!-- 11 -->
+          <div class="terms-section" id="s11">
+            <h2>11. Do We Make Updates to This Notice?</h2>
+            <p><em>In Short: Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></p>
+            <p>We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</p>
+          </div>
+
+          <!-- 12 -->
+          <div class="terms-section" id="s12">
+            <h2>12. How Can You Contact Us About This Notice?</h2>
+            <p>If you have questions or comments about this notice, you may email us at <a href="mailto:support@mobilepushers.com">support@mobilepushers.com</a> or contact us by post at:</p>
+            <p>
+              <strong>MOBILE PUSHERS LLC</strong><br>
+              111 NE 1st Street<br>
+              8th Floor #1032<br>
+              Miami, FL 33132<br>
+              United States
+            </p>
+          </div>
+
+          <!-- 13 -->
+          <div class="terms-contact-card" id="s13">
+            <h2>13. How Can You Review, Update, or Delete the Data We Collect From You?</h2>
+            <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it. To request to review, update, or delete your personal information, please contact us:</p>
+            <p>Email: <a href="mailto:support@mobilepushers.com">support@mobilepushers.com</a></p>
+            <p>Phone: <a href="tel:+13052096174">305-209-6174</a></p>
+            <p>
+              MOBILE PUSHERS LLC<br>
+              111 NE 1st Street, 8th Floor #1032<br>
+              Miami, FL 33132, United States
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <img src="images/logo.png" alt="BrainSpark" class="site-footer__logo" />
+      <p class="site-footer__copy">© 2026 BrainSpark. Retail media, gamified.</p>
+      <nav class="site-footer__links" aria-label="Legal">
+        <a href="terms.html">Terms</a><span aria-hidden="true">|</span>
+        <a href="privacy.html">Privacy</a><span aria-hidden="true">|</span>
+        <a href="dnc.html">DNC Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

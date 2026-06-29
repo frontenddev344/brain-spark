@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do Not Call Policy — BrainSpark</title>
+  <meta name="description" content="BrainSpark Do Not Call Policy — Mobile Pushers LLC" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@500;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <style>
+    .terms-hero {
+      background: var(--purple-section);
+      border-bottom: 2px solid var(--ink);
+      padding: 56px 0 48px;
+      color: #fff;
+    }
+    .terms-hero__label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 14px;
+    }
+    .terms-hero__title {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.05;
+      margin: 0 0 12px;
+      color: #fff;
+    }
+    .terms-hero__meta { font-size: 14px; color: rgba(255,255,255,0.55); }
+
+    .terms-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 56px 0 80px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 24px;
+      background: #fff;
+      border-radius: var(--r-card);
+      box-shadow: inset 0 0 0 2px var(--ink), var(--shadow-hard-sm);
+      padding: 24px 20px;
+    }
+    .toc__title {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+    .toc__list { display: flex; flex-direction: column; gap: 2px; }
+    .toc__list a {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted-2);
+      padding: 5px 8px;
+      border-radius: 8px;
+      transition: background .15s ease, color .15s ease;
+      line-height: 1.4;
+    }
+    .toc__list a:hover { background: var(--cyan-soft); color: var(--ink); }
+
+    .terms-body { min-width: 0; }
+    .terms-section { margin-bottom: 44px; }
+    .terms-section:last-child { margin-bottom: 0; }
+
+    .terms-section h2 {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--ink);
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+      scroll-margin-top: 30px;
+    }
+    .terms-section h3 {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink);
+      margin: 20px 0 8px;
+    }
+    .terms-section p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+    .terms-section p:last-child { margin-bottom: 0; }
+    .terms-section ul, .terms-section ol {
+      list-style: disc;
+      padding-left: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+    .terms-section ol { list-style: decimal; }
+    .terms-section li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .terms-section a { color: var(--purple-deep); text-decoration: underline; text-underline-offset: 3px; }
+    .terms-section a:hover { color: var(--pink); }
+
+    /* Opt-out action card */
+    .dnc-action-card {
+      background: var(--cyan-soft);
+      border-radius: var(--r-card);
+      box-shadow: inset 0 0 0 2px var(--ink), var(--shadow-hard-sm);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .dnc-action-card__title {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink);
+      margin: 0 0 16px;
+    }
+    .dnc-methods { display: flex; flex-direction: column; gap: 12px; }
+    .dnc-method {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: inset 0 0 0 2px var(--ink);
+      padding: 14px 18px;
+    }
+    .dnc-method__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--purple-section);
+      color: var(--cyan);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .dnc-method__icon svg { width: 20px; height: 20px; }
+    .dnc-method__label {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--ink);
+      margin: 0 0 2px;
+    }
+    .dnc-method__value {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .dnc-method__value a { color: var(--purple-deep); text-decoration: underline; text-underline-offset: 2px; }
+    .dnc-method__value a:hover { color: var(--pink); }
+
+    /* Key points strip */
+    .dnc-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .dnc-step {
+      background: #fff;
+      border-radius: var(--r-card);
+      box-shadow: inset 0 0 0 2px var(--ink), var(--shadow-hard-sm);
+      padding: 20px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .dnc-step__num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: 2px 2px 0 var(--ink);
+      border: 2px solid var(--ink);
+    }
+    .dnc-step__text {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .terms-contact-card {
+      background: var(--purple-section);
+      border-radius: var(--r-card);
+      box-shadow: inset 0 0 0 2px var(--ink), var(--shadow-hard-sm);
+      padding: 28px 32px;
+      color: #fff;
+    }
+    .terms-contact-card h2 {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--cyan);
+      margin: 0 0 16px;
+      border-bottom: 2px solid rgba(255,255,255,0.15);
+      padding-bottom: 10px;
+    }
+    .terms-contact-card p { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.75); margin: 0 0 6px; }
+    .terms-contact-card a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .terms-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { position: static; }
+      .terms-hero__title { font-size: 34px; }
+      .dnc-steps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .terms-hero__title { font-size: 28px; }
+      .dnc-action-card, .terms-contact-card { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="BrainSpark home">
+        <img src="images/logo.png" alt="BrainSpark" class="brand__logo" />
+      </a>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="index.html#business" class="nav__link">How it works</a>
+        <a href="index.html#gameplan" class="nav__link">Game Plan</a>
+        <a href="index.html#mobile-apps" class="nav__link">Mobile Apps</a>
+        <a href="index.html#spark-dsp" class="nav__link">Spark DSP</a>
+      </nav>
+      <div class="header__actions">
+        <a href="index.html#contact" class="btn btn--pink btn--sm header__cta">Get in Touch <span aria-hidden="true">→</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================= HERO ========================= -->
+    <section class="terms-hero">
+      <div class="container">
+        <span class="terms-hero__label">Legal</span>
+        <h1 class="terms-hero__title">"Do Not Call" Policy</h1>
+        <p class="terms-hero__meta">Last updated February 29, 2024</p>
+      </div>
+    </section>
+
+    <!-- ========================= CONTENT ========================= -->
+    <div class="container">
+      <div class="terms-layout">
+
+        <!-- Sidebar TOC -->
+        <aside class="toc" aria-label="Table of contents">
+          <p class="toc__title">Contents</p>
+          <nav class="toc__list">
+            <a href="#overview">Overview</a>
+            <a href="#how-to-opt-out">How to Opt Out</a>
+            <a href="#key-rules">Key Rules</a>
+            <a href="#formal-policy">Formal Policy</a>
+            <a href="#placement">Placement on DNC List</a>
+            <a href="#compliance">Compliance</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </aside>
+
+        <!-- Body -->
+        <div class="terms-body">
+
+          <!-- Overview -->
+          <div class="terms-section" id="overview">
+            <h2>Overview</h2>
+            <p>If you don't want to receive sales calls from Mobile Pushers LLC, you can ask us to place your telephone number on our "Do Not Call" list. In compliance with federal and state laws, we'll document your request immediately. Please allow up to <strong>30 days</strong> for your telephone number to be removed from any sales programs that are currently underway.</p>
+            <p>Being on the Mobile Pushers LLC "Do Not Call" list means that you won't receive sales calls by anybody representing Mobile Pushers LLC. We may still contact you, however, for non-solicitation purposes. This would include things like surveys, billing, and other service-related matters.</p>
+            <p>When we solicit prospective customers, we also honor "Do Not Call" requests on behalf of consumers listed on the National Do Not Call Registry maintained by the Federal Trade Commission and various state-agency lists. Many state "Do Not Call" regulations permit companies to contact their own customers even though they are on these lists. Therefore, if you are a customer, you may be contacted by us even though you are on a state or the national "Do Not Call" list. If you do not want to be contacted by Mobile Pushers LLC even though you are a customer, simply follow the opt-out steps below.</p>
+            <p>All employees that engage in outbound telephone solicitation are trained in this policy and are made aware of these procedures before they are allowed to place calls to consumers. Management reviews the policy with these employees on a regular basis. The methods and procedures in this policy are reviewed by Mobile Pushers LLC on a <strong>quarterly basis</strong>.</p>
+          </div>
+
+          <!-- How to opt out -->
+          <div id="how-to-opt-out">
+            <div class="dnc-action-card">
+              <p class="dnc-action-card__title">How to Request "Do Not Call" Status</p>
+              <div class="dnc-methods">
+                <div class="dnc-method">
+                  <span class="dnc-method__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v14H4z"/><path d="M4 4l8 9 8-9"/></svg>
+                  </span>
+                  <div>
+                    <p class="dnc-method__label">Email (unsubscribe)</p>
+                    <p class="dnc-method__value"><a href="mailto:unsubscribe@mobilepushers.com">unsubscribe@mobilepushers.com</a></p>
+                  </div>
+                </div>
+                <div class="dnc-method">
+                  <span class="dnc-method__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v14H4z"/><path d="M4 4l8 9 8-9"/></svg>
+                  </span>
+                  <div>
+                    <p class="dnc-method__label">Email (support)</p>
+                    <p class="dnc-method__value"><a href="mailto:support@mobilepushers.com">support@mobilepushers.com</a></p>
+                  </div>
+                </div>
+                <div class="dnc-method">
+                  <span class="dnc-method__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92V20a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 2 4.18 2 2 0 0 1 4 2h3.09a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                  </span>
+                  <div>
+                    <p class="dnc-method__label">Phone</p>
+                    <p class="dnc-method__value"><a href="tel:+13052096174">305-209-6174</a></p>
+                  </div>
+                </div>
+                <div class="dnc-method">
+                  <span class="dnc-method__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </span>
+                  <div>
+                    <p class="dnc-method__label">Written request by mail</p>
+                    <p class="dnc-method__value">Mobile Pushers LLC, 111 NE 1st St 8th Floor #1032, Miami, FL 33132, USA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key rules -->
+          <div class="terms-section" id="key-rules">
+            <h2>Key Rules</h2>
+            <div class="dnc-steps">
+              <div class="dnc-step">
+                <span class="dnc-step__num">1</span>
+                <p class="dnc-step__text">Your request can be in writing or by phone and must include, at a minimum, your telephone number. If you have multiple numbers, tell us all numbers you want included.</p>
+              </div>
+              <div class="dnc-step">
+                <span class="dnc-step__num">2</span>
+                <p class="dnc-step__text">Your request must provide the 10-digit residential telephone number that is not to be called, and your name if desired.</p>
+              </div>
+              <div class="dnc-step">
+                <span class="dnc-step__num">3</span>
+                <p class="dnc-step__text">You'll remain on our "Do Not Call" list for <strong>five (5) years</strong>, unless you ask to be removed.</p>
+              </div>
+              <div class="dnc-step">
+                <span class="dnc-step__num">4</span>
+                <p class="dnc-step__text">If your telephone number ever changes, you must give us your new information for your "Do Not Call" status to remain in effect.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formal policy -->
+          <div class="terms-section" id="formal-policy">
+            <h2>Mobile Pushers LLC — Formal DNC Policy</h2>
+            <p>Mobile Pushers LLC respects the wishes of those customers and prospective customers who do not want to receive telephone solicitation calls from the company in their homes. It is the policy of the company not to make a telephone solicitation call to:</p>
+            <ul>
+              <li>any person who has requested that the company not make such calls to the person's residence; or</li>
+              <li>any person who has put his or her telephone number on a national or state Do Not Call registry, except as otherwise permitted by law.</li>
+            </ul>
+            <p>A <strong>"telephone solicitation call"</strong> means any call that is made for the purpose of encouraging the purchase of products and services from Mobile Pushers LLC.</p>
+          </div>
+
+          <!-- Placement -->
+          <div class="terms-section" id="placement">
+            <h2>Placement on the DNC List</h2>
+            <p>Mobile Pushers LLC maintains a list containing the telephone numbers and names (if provided) of those persons who have told the company that they do not want to receive telephone solicitation calls from the company.</p>
+            <p>Once a request has been made, Mobile Pushers will add the telephone number and name (if provided) to the Company's Do Not Call list within <strong>thirty (30) days</strong>. The Company will maintain the telephone number and name (if provided) on the Company's Do Not Call list for <strong>five (5) years</strong>, unless a request is made by the person to have the number removed.</p>
+            <p>If a person's telephone number changes, another request must be submitted to have the new number added to the Company's Do Not Call list.</p>
+            <p>If a consumer requests a copy of our "Do Not Call" policy, we will send a copy via U.S. mail or electronic mail.</p>
+          </div>
+
+          <!-- Compliance -->
+          <div class="terms-section" id="compliance">
+            <h2>Compliance &amp; Training</h2>
+            <p>Mobile Pushers LLC intends to comply with all federal and state Do Not Call laws. All employees that engage in outbound telephone solicitation are trained in this policy and are made aware of these procedures before they are allowed to place calls to consumers. Management reviews the policy with these employees on a regular basis.</p>
+            <p>The methods and procedures in this "Do Not Call" policy are reviewed by Mobile Pushers LLC on a <strong>quarterly basis</strong>.</p>
+          </div>
+
+          <!-- Contact -->
+          <div class="terms-contact-card" id="contact">
+            <h2>Questions About This Policy?</h2>
+            <p>Any questions concerning the Company's Do Not Call Policy may be directed to:</p>
+            <p><strong style="color:#fff;">Rosina Ron Leder</strong></p>
+            <p>Email: <a href="mailto:support@mobilepushers.com">support@mobilepushers.com</a></p>
+            <p>Phone: <a href="tel:+13052096174">305-209-6174</a></p>
+            <p style="margin-top:12px;">
+              MOBILE PUSHERS LLC<br>
+              111 NE 1st Street, 8th Floor #1032<br>
+              Miami, FL 33132, United States
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <img src="images/logo.png" alt="BrainSpark" class="site-footer__logo" />
+      <p class="site-footer__copy">© 2026 BrainSpark. Retail media, gamified.</p>
+      <nav class="site-footer__links" aria-label="Legal">
+        <a href="terms.html">Terms</a><span aria-hidden="true">|</span>
+        <a href="privacy.html">Privacy</a><span aria-hidden="true">|</span>
+        <a href="dnc.html">DNC Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
