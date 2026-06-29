@@ -64,8 +64,26 @@
   .hero__title { font-size: 56px; }
 
   .apps__head { flex-direction: column; align-items: flex-start; }
-  .apps__grid { grid-template-columns: 1fr 1fr; gap: 22px; }
-  .apps__grid .app-card:last-child { grid-column: 1 / -1; max-width: 420px; }
+
+  /* Swipeable slider from 900px down */
+  .apps__grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -24px;
+    padding: 4px 24px 6px;
+  }
+  .apps__grid::-webkit-scrollbar { display: none; }
+  .apps__grid .app-card {
+    flex: 0 0 48%;
+    max-width: 48%;
+    scroll-snap-align: center;
+  }
+  .apps__grid .app-card:last-child { max-width: 48%; }
+  .apps__dots { display: flex; }
 
   .dsp__panel { grid-template-columns: 1fr; }
   .dsp__panel::after { opacity: .5; }
@@ -148,28 +166,10 @@
   .hero__stats { gap: 20px; justify-content: space-between; }
   .hero__stats strong { font-size: 24px; }
 
-  /* Owned & Operated → swipeable slider */
-  .apps__grid {
-    display: flex;
-    grid-template-columns: none;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    margin: 0 -18px;
-    padding: 4px 18px 6px;
-  }
-  .apps__grid::-webkit-scrollbar { display: none; }
-  .apps__grid .app-card {
-    flex: 0 0 100%;
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    scroll-snap-align: center;
-  }
-  .apps__grid .app-card:last-child { max-width: 100%; }
-  .apps__dots { display: flex; }
+  /* Full-width cards on small phones */
+  .apps__grid .app-card { flex: 0 0 88%; max-width: 88%; }
+  .apps__grid .app-card:last-child { max-width: 88%; }
+  .apps__grid { margin: 0 -18px; padding: 4px 18px 6px; }
   .phone__clip { font-size: 10px; }
 
   .brand-grid { grid-template-columns: 1fr 1fr; }
