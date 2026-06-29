@@ -1,4 +1,4 @@
-/* =================================================================
+﻿/* =================================================================
    BrainSpark — responsive.css
    Breakpoints: 1200, 1024, 900, 768, 600, 480, 375, 320
    ================================================================= */
@@ -265,4 +265,24 @@
   .model-grid { grid-template-columns: 1fr; }
   .brand-grid { grid-template-columns: 1fr; }
   .chip { font-size: 12px; padding: 7px 13px; }
+}
+
+/* ---- Legal pages (terms / privacy / dnc) ---- */
+@media (max-width: 768px) {
+  .terms-layout { grid-template-columns: 1fr; gap: 32px; }
+  .toc { position: static; }
+  .terms-hero__title { font-size: 34px; }
+  .dnc-steps { grid-template-columns: 1fr; }
+  .data-table { font-size: 12px; }
+  .data-table th, .data-table td { padding: 8px 10px; }
+}
+@media (max-width: 480px) {
+  .terms-hero__title { font-size: 28px; }
+  .terms-intro, .summary-card, .terms-contact-card, .dnc-action-card { padding: 22px 20px; }
+}
+
+/* ---- 404 page ---- */
+@media (max-width: 480px) {
+  .err-actions { flex-direction: column; align-items: center; }
+  .err-actions .btn { width: 100%; justify-content: center; max-width: 280px; }
 }
