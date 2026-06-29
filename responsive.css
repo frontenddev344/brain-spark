@@ -117,6 +117,7 @@
     margin: auto;
     max-width: 470px;
     width: 100%;
+    margin-top: 20px;
 }
 .gameplan .section-title,.gameplan .eyebrow {
     text-align: center;
