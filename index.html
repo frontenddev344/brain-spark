@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@500;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="responsive.css" />
 </head>
@@ -28,6 +29,7 @@
         <a href="#gameplan" class="nav__link">Game Plan</a>
         <a href="#mobile-apps" class="nav__link">Mobile Apps</a>
         <a href="#spark-dsp" class="nav__link">Spark DSP</a>
+        <a href="#news" class="nav__link">News</a>
       </nav>
 
       <div class="header__actions">
@@ -396,6 +398,96 @@
       </div>
     </section>
 
+    <!-- ========================= LATEST NEWS ========================= -->
+    <section class="news" id="news">
+      <div class="container">
+        <div class="news__panel">
+          <div class="news__bar">
+            <span class="news__label">Latest from BrainSpark</span>
+            <div class="news__controls">
+              <div class="news__dots" id="newsDots" role="tablist" aria-label="News slides"></div>
+              <div class="news__arrows">
+                <button type="button" class="news__arrow" id="newsPrev" aria-label="Previous article">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button type="button" class="news__arrow" id="newsNext" aria-label="Next article">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper news-swiper" id="newsSwiper">
+            <div class="swiper-wrapper">
+              <div class="news-card swiper-slide">
+                <div class="news-card__inner">
+                  <div class="news-card__media">
+                    <div class="news-visual news-visual--dsp" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="rgba(255,255,255,0.18)"/></svg>
+                    </div>
+                    <span class="news-card__tag">Product</span>
+                  </div>
+                  <div class="news-card__body">
+                    <h3 class="news-card__title">Spark DSP Now Live Across More Retail Networks</h3>
+                    <p class="news-card__desc">Our self-serve ad platform now plugs into even more retail media channels, putting first-party data to work the moment a campaign goes live.</p>
+                    <a href="news-spark-dsp.html" class="news-card__link">Read More <span aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-card swiper-slide">
+                <div class="news-card__inner">
+                  <div class="news-card__media">
+                    <div class="news-visual news-visual--rabbit" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5" fill="rgba(255,255,255,0.18)"/><path d="M3 8h18M12 8v13M12 8c-1.6-4.2-6.2-4.2-6.2 0M12 8c1.6-4.2 6.2-4.2 6.2 0"/></svg>
+                    </div>
+                    <span class="news-card__tag">Mobile Apps</span>
+                  </div>
+                  <div class="news-card__body">
+                    <h3 class="news-card__title">Rewards Rabbit Crosses 10M Downloads</h3>
+                    <p class="news-card__desc">Our hop-and-earn rewards app hits a new milestone, fueling fresh first-party data and engagement across the BrainSpark portfolio.</p>
+                    <a href="news-rewards-rabbit.html" class="news-card__link">Read More <span aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-card swiper-slide">
+                <div class="news-card__inner">
+                  <div class="news-card__media">
+                    <div class="news-visual news-visual--loyalty" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="6" fill="rgba(255,255,255,0.18)"/><path d="M9.5 10.5L7 3h3l2 6.5M14.5 10.5L17 3h-3l-2 6.5"/></svg>
+                    </div>
+                    <span class="news-card__tag">Industry</span>
+                  </div>
+                  <div class="news-card__body">
+                    <h3 class="news-card__title">Why Gamified Loyalty Is Reshaping Retail Media</h3>
+                    <p class="news-card__desc">Playable ad experiences are driving deeper engagement than static banners — here's what the latest performance data shows.</p>
+                    <a href="news-gamified-loyalty.html" class="news-card__link">Read More <span aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-card swiper-slide">
+                <div class="news-card__inner">
+                  <div class="news-card__media">
+                    <div class="news-visual news-visual--data" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="9" cy="12" r="6.5" fill="rgba(255,255,255,0.14)"/><circle cx="15" cy="12" r="6.5" fill="rgba(255,255,255,0.14)"/></svg>
+                    </div>
+                    <span class="news-card__tag">Company</span>
+                  </div>
+                  <div class="news-card__body">
+                    <h3 class="news-card__title">BrainSpark Expands First-Party Data Partnerships</h3>
+                    <p class="news-card__desc">New integrations bring even richer shopper signal to our DSP, helping advertisers reach the right audience at the right moment.</p>
+                    <a href="news-data-partnerships.html" class="news-card__link">Read More <span aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ========================= CONTACT ========================= -->
     <section class="contact" id="contact">
       <div class="container">
@@ -463,6 +555,8 @@
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

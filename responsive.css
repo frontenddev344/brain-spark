@@ -296,3 +296,17 @@
   .chip { font-size: 12px; padding: 7px 13px; }
 }
 
+/* ---- Latest News ---- */
+@media (max-width: 768px) {
+  .news__panel { padding: 22px 20px 24px; }
+  .news-card__inner { flex-direction: column; height: 360px; }
+  .news-card__media { flex: 0 0 160px; height: 160px; }
+  .news-card__body { height: auto; }
+}
+@media (max-width: 480px) {
+  .news__bar { flex-wrap: wrap; }
+  .news-stats { grid-template-columns: 1fr 1fr; }
+  .news-article__cover { height: 200px; }
+  .news-article__lede { font-size: 16px; }
+}
+

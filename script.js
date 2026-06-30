@@ -216,4 +216,30 @@
       });
     }, { passive: true });
   }
+
+  /* ---------- Latest News slider (Swiper) ---------- */
+  var newsSwiperEl = document.getElementById("newsSwiper");
+  if (newsSwiperEl && window.Swiper) {
+    new Swiper(newsSwiperEl, {
+      loop: true,
+      grabCursor: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      speed: 500,
+      autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
+      pagination: {
+        el: document.getElementById("newsDots"),
+        clickable: true,
+        bulletClass: "news__dot",
+        bulletActiveClass: "is-active"
+      },
+      navigation: {
+        nextEl: document.getElementById("newsNext"),
+        prevEl: document.getElementById("newsPrev")
+      },
+      breakpoints: {
+        769: { slidesPerView: 2 }
+      }
+    });
+  }
 })();
