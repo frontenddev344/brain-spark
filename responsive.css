@@ -23,6 +23,47 @@
   .apps__title { font-size: 40px; }
   .section-title, .contact__title { font-size: 30px; }
   .dsp__title { font-size: 30px; }
+
+  .journey__stages {
+    grid-template-columns: 1fr;
+    gap: 56px 0;
+  }
+  .stage__connector {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 4px 0;
+  }
+  .connector-arrow { width: 90px; transform: rotate(90deg); }
+  .stage { max-width: 480px; margin-inline: auto; text-align: left; }
+
+  .outcomes__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+  .outcomes__divider:nth-child(4n) { display: none; }
+  .outcomes__divider { display: none; }
+  .outcome { border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+  .outcome:nth-last-child(-n+1),
+  .outcome:nth-last-child(-n+2) { padding-bottom: 0; }
+
+  .stage__connector svg {
+    transform: rotate(90deg);
+}
+
+.journey .section-head {
+    text-align: center;
+}
+
+.journey .section-sub {
+    margin: 0 auto;
+}
+
+.stage.stage--engagement .jouney-img {
+    width: 100%;
+}
+
 }
 
 /* =================== <= 1100px : stack offerwall panel early =================== */
@@ -164,6 +205,41 @@
 }
 
 /* =================== <= 600px : large phones =================== */
+
+@media (max-width: 640px) {
+  .journey { padding: 64px 16px 80px; }
+  .journey__intro { margin-bottom: 44px; }
+
+  .stage { text-align: center; margin-inline: auto; max-width: 340px; }
+  .stage__head {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 6px;
+  }
+  .stage__icon-ring { grid-row: auto; }
+  .stage__number { align-self: center; }
+  .stage__title { align-self: center; }
+  .stage__desc { margin-inline: auto; }
+
+  .stage__visual { min-height: 260px; }
+  .float-card--product { left: 50%; transform: translateX(-96px); }
+  .float-card--phone { left: 50%; transform: translateX(6px); }
+  .float-card--ad { left: 50%; transform: translateX(-64px); }
+  .float-card--notif { left: 50%; transform: translateX(-52px); }
+
+  .big-phone__frame { width: 180px; }
+
+  .customer-avatar { width: 140px; }
+  .float-card--reward { right: 0; }
+  .float-card--vip { right: -4px; }
+
+  .outcomes { padding: 36px 22px; border-radius: 22px; }
+  .outcomes__grid { grid-template-columns: 1fr; row-gap: 28px; }
+  .outcome { text-align: center; border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+  .outcome:last-child { border-bottom: none; padding-bottom: 0; }
+  .outcome__icon-ring { margin-inline: auto; }
+}
+
 @media (max-width: 600px) {
   .container { padding: 0 18px; }
   /*.header__cta { display: none; }*/
