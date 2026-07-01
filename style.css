@@ -988,8 +988,8 @@ span.check svg {
   color: var(--cyan);
 }
 .ow-stat__icon svg { width: 24px; height: 24px; }
-.ow-stat strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 15px; }
-.ow-stat span { display: block; font-size: 10px; color: rgba(255,255,255,0.72); margin-top: 4px; line-height: 1.3; margin-left: auto;margin-right: auto;}
+.ow-stat strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 16px; }
+.ow-stat span { display: block; font-size: 12px; color: rgba(255,255,255,0.72); margin-top: 4px; line-height: 1.3; margin-left: auto;margin-right: auto;}
 
 /* ---- Offerwall phone mockup ---- */
 .ow-phone { display: flex; justify-content: center; }
@@ -1073,11 +1073,13 @@ span.check svg {
 .ow-notes { display: flex; flex-direction: column; gap: 30px; }
 .ow-note { position: relative; display: flex; flex-direction: column; gap: 10px; padding-left: 4px; }
 .ow-note::before {
-  content: "";
-  position: absolute;
-  left: -24px; top: 22px;
-  width: 20px; height: 0;
-  border-top: 2px dotted var(--pink);
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 22px;
+    width: 20px;
+    height: 0;
+    border-top: 2px dotted #520f81;
 }
 .ow-note__icon {
     width: 44px;
