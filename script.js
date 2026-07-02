@@ -149,7 +149,7 @@
   /* ---------- Hero typing effect ---------- */
   var typedEl = document.getElementById("typedWord");
   if (typedEl) {
-    var words = ["Loyalty Rewards", "Big Data"];
+    var words = ["Gamification.", "Loyalty Rewards", "Big Data"];
     var wIdx = 0, cIdx = 0, deleting = false;
     function runTyper() {
       var word = words[wIdx];
