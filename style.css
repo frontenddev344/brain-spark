@@ -1124,7 +1124,7 @@ span.check svg {
 }
 .ow-note__icon svg { width: 22px; height: 22px; }
 .ow-note h4 { font-family: var(--font-display); font-weight: 700; font-size: 16px; margin: 0 0 4px; color: var(--ink); }
-.ow-note p { font-size: 12px; line-height: 1.45; color: var(--muted); margin: 0; max-width: 140px; }
+.ow-note p { font-size: 12px; line-height: 1.45; color: var(--muted); margin: 0; max-width: 120px; }
 
 /* ===================== LEGAL PAGES ===================== */
 .terms-hero { background: var(--purple-section); border-bottom: 2px solid var(--ink); padding: 56px 0 48px; color: #fff; }
