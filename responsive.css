@@ -388,7 +388,7 @@
   .brand__logo {
     height: 38px;
 }
-  .hero__title { font-size: 46px; }
+  .hero__title { font-size: 38px; }
   .hero__stats { gap: 12px; }
   .hero__stats strong { font-size: 21px; }
   .hero__stats span { font-size: 10px; }
