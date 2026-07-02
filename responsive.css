@@ -84,7 +84,7 @@
 
 /* =================== <= 900px : collapse nav + 2-up =================== */
 @media (max-width: 900px) {
-  /*.nav {
+  .nav {
     position: fixed;
     inset: 79px 0 auto 0;
     flex-direction: column;
@@ -103,7 +103,38 @@
     border-bottom: 1px solid var(--line);
   }
   .nav-toggle { display: flex; }
-*/
+
+/* mobile menu  */
+/* nav#primaryNav {
+    padding: 20px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: var(--cream);
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    max-width: 350px;
+    margin-left: auto;
+    transform: translateX(100%);
+    transition: all 0.2s linear;
+    padding: 80px 20px 20px;
+    box-shadow: inset -3px -1px 0 4px var(--ink), var(--shadow-hard-sm);
+    border-radius: 40px 0 0 40px;
+    gap: 0;
+}
+
+nav#primaryNav .nav__link {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+}
+
+nav#primaryNav .nav__link {
+    border-bottom: 1px solid #0000001a;
+} */
 .nav {
     display: none;
 }
