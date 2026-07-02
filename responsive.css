@@ -102,7 +102,7 @@
     font-size: 16px;
     border-bottom: 1px solid var(--line);
   }
-  .nav-toggle { display: flex; }
+  /* .nav-toggle { display: flex; } */
 
 /* mobile menu  */
 /* nav#primaryNav {
